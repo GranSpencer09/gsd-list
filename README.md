@@ -1,5 +1,3 @@
-
-
 ## gsd-list
 
 <img width="1125" alt="Screen Shot 2022-08-15 at 2 13 05 PM" src="https://user-images.githubusercontent.com/28960328/184719509-13620e34-9e46-401c-91b1-578c2834fb82.png">
@@ -7,79 +5,25 @@
 URL: https://granspencer09.github.io/gsd-list/
 
 ## Description
-Provide a short description explaining the what, why, and how of your project.
-Use the following questions as a guide:
-- What was your motivation?
-- Why did you build this project? (Note: the answer is not "Because it was a 
-homework assignment.")
-- What problem does it solve?
-- What did you learn?
 
-
-## Table of Contents (Optional)
-If your README is long, add a table of contents to make it easy for users to 
-find what they need.
-- [Installation](#installation)
-- [Usage](#usage)
-- [Credits](#credits)
-- [License](#license)
-
+This application helps people keep track of what they need to get done each day, and most importantly, actually get it all done. By tracking the current local time and color coordinating the schedule, the app keeps the user on top of their to-do lists. It can be tough to make sure you get everything done everyday, and it's even harder to be ontime. This app solves that. Creating this I learned more about jQuery, objects and value keys combos.
 
 ## Installation
-What are the steps required to install your project? Provide a step-by-step 
-description of how to get the development environment running.
 
+Just open the URL above.
 
 ## Usage
-Provide instructions and examples for use. Include screenshots as needed.
-To add a screenshot, create an `assets/images` folder in your repository and 
-upload your screenshot to it. Then, using the relative file path, add it to 
-your README using the following syntax:
-    ```md
-    ![alt text](assets/images/screenshot.png)
-    ```
 
+Refer to the screen shot above, but to use this app you'll need to be able to type and click. Once the page is loaded, click into any of the text blocks, type any and all of the tasks you have for that hour block and then click the save icon to the right of the page.
 
 ## Credits
-List your collaborators, if any, with links to their GitHub profiles.
-If you used any third-party assets that require attribution, list the creators
-with links to their primary web presence in this section.
-If you followed tutorials, include links to those here as well.
 
-
-## License
-The last section of a high-quality README file is the license. This lets other
-developers know what they can and cannot do with your project. If you need 
-help choosing a license, refer to 
-
-[https://choosealicense.com/](https://choosealicense.com/).
-
-
----
-🏆 The previous sections are the bare minimum.
-
-## Badges
-
-![badmath](https://img.shields.io/github/languages/top/lernantino/badmath)
-
-Badges aren't necessary, per se, but they demonstrate street cred. Badges let 
-other developers know that you know what you're doing. Check out the badges 
-hosted by [shields.io](https://shields.io/). You may not understand what they 
-all represent now, but you will in time.
-
+In addition to the jQuery documentation, I looked to sylviaprabudy on GitHub for ideas on how to access the specific block of text that corressponds to a specific save button and pass that to a variable.
 
 ## Features
-If your project has a lot of features, list them here.
 
-
-## How to Contribute
-If you created an application or package and would like other developers to 
-contribute it, you can include guidelines for how to do so. The [Contributor 
-Covenant](https://www.contributor-covenant.org/) is an industry standard, but 
-you can always write your own if you'd prefer.
-
+JavaScript to color coordinate based on time and saving user input to local storage.
 
 ## Tests
-Go the extra mile and write tests for your application. Then provide examples 
-on how to run them here.
 
+Open the application and use Chrome Dev Tools to go to 'Applications' and ensure the app truly stores user input to the proper key and stores the right value.
