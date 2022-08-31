@@ -1,18 +1,30 @@
 const currentDay = document.getElementById("currentDay");
 const text = document.getElementsByTagName("textarea");
-const savebtn = document.querySelectorAll("#saveBtn");
+const savebtn = document.querySelector("saveBtn");
+const timeblock = document.getElementsByClassName("time-block");
 
 // Display the current date
 currentDay.textContent = moment().format("MMMM Do, YYYY");
 
-// reload todos
-function reload() {
-  const savedText = localStorage.getItem("input");
-  text.textContent = savedText;
-  //styleTime();
-}
-// style text areas
+console.log(timeblock[0].childNodes[3].getAttribute("id"));
+console.log(savebtn);
 
+function start() {
+  // reload todos
+  function reload() {
+    const savedText = localStorage.getItem("input");
+    text.textContent = savedText;
+    //styleTime();
+  }
+  // style text areas
+  function timeStyler() {
+    let currentTime = moment().hour();
+    for (let i = 0; i < timeblock.length; i++) {
+      const timeHTML = timeblock[i].childNodes[3].getAttribute(id);
+      console.log(timeHTML);
+    }
+  }
+}
 // listen for click on savebtn
 
 function saving() {
@@ -27,3 +39,5 @@ function saving() {
 }
 // save todos
 savebtn.addEventListener("click", saving);
+
+start();
