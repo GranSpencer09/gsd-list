@@ -6,7 +6,7 @@ const timeblock = document.getElementsByClassName("time-block");
 // Display the current date
 currentDay.textContent = moment().format("MMMM Do, YYYY");
 
-console.log(timeblock);
+// console.log(timeblock);
 console.log(savebtns);
 
 function start() {
@@ -42,19 +42,13 @@ function start() {
   }
 }
 
-// let currentTime = moment().hour();
-// for (let i = 0; i < timeblock.length; i++) {
-//   const timeHTML = timeblock[i].childNodes[3].getAttribute("id");
-//   console.log(timeHTML);
-// }
-
-// listen for click on savebtn
+// listen for click on each savebtn
 savebtns.forEach((savebtn) => {
-  savebtn.addEventListener("click", function saving() {
-    var text = document.querySelector(".description");
-    var time = document
-      .querySelector(".time-block")
-      .childNodes[3].getAttribute("id");
+  savebtn.addEventListener("click", function handleClick(event) {
+    console.log();
+
+    var text = event.path[1].children[1].value;
+    var time = event.path[1].children[1].id;
 
     console.log(text);
     console.log(time);
