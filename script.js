@@ -11,33 +11,47 @@ console.log(savebtns);
 
 function start() {
   // reload todos
-  function reload() {
-    const savedText = localStorage.getItem("input");
-    text.textContent = savedText;
-    //styleTime();
-  }
+
+  const savedText = localStorage.getItem("input");
+  text.textContent = savedText;
+  timeStyler();
+
   // style text areas
   function timeStyler() {
     let currentTime = moment().hour();
     for (let i = 0; i < timeblock.length; i++) {
-      const timeHTML = timeblock[i].childNodes[3].getAttribute(id);
+      let timeHTML = timeblock[i].childNodes[3]
+        .getAttribute("id")
+        .split("hour")[1];
       console.log(timeHTML);
+      console.log(currentTime);
+      if (timeHTML == currentTime) {
+        timeblock[i].classList.add("present");
+        timeblock[i].classList.remove("future");
+        timeblock[i].classList.remove("past");
+      } else if (timeHTML > currentTime) {
+        timeblock[i].classList.remove("present");
+        timeblock[i].classList.add("future");
+        timeblock[i].classList.remove("past");
+      } else {
+        timeblock[i].classList.remove("present");
+        timeblock[i].classList.remove("future");
+        timeblock[i].classList.add("past");
+      }
     }
   }
 }
 
-let currentTime = moment().hour();
-for (let i = 0; i < timeblock.length; i++) {
-  const timeHTML = timeblock[i].childNodes[3].getAttribute("id");
-  console.log(timeHTML);
-}
+// let currentTime = moment().hour();
+// for (let i = 0; i < timeblock.length; i++) {
+//   const timeHTML = timeblock[i].childNodes[3].getAttribute("id");
+//   console.log(timeHTML);
+// }
 
 // listen for click on savebtn
 savebtns.forEach((savebtn) => {
   savebtn.addEventListener("click", function saving() {
-    // save todos
-
-    var text = document.querySelector(".description").childNodes[3];
+    var text = document.querySelector(".description");
     var time = document
       .querySelector(".time-block")
       .childNodes[3].getAttribute("id");
