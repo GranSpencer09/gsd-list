@@ -6,12 +6,8 @@ const timeblock = document.getElementsByClassName("time-block");
 // Display the current date
 currentDay.textContent = moment().format("MMMM Do, YYYY");
 
+// hard coding to reload and display the stored to-do's
 function start() {
-  // for (let i = 9; i <= text.length; i++) {
-  //   const hour = document.querySelector(`#hour`[i]);
-  //   let hourtext = localStorage.getItem(`hour`[i]);
-  //   hour.textContent = hourtext;
-  // }
   let hour9 = document.querySelector("#hour9");
   let hour9text = localStorage.getItem("hour9");
 
@@ -95,3 +91,5 @@ savebtns.forEach((savebtn) => {
 });
 
 start();
+
+// I'd like to optimize this so I push the to-do's to an array, save the array to local storage and then use a for loop to callback to the array and loop over it to display the stored values
