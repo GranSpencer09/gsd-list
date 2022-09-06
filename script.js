@@ -6,14 +6,57 @@ const timeblock = document.getElementsByClassName("time-block");
 // Display the current date
 currentDay.textContent = moment().format("MMMM Do, YYYY");
 
-// console.log(timeblock);
-console.log(savebtns);
-
 function start() {
-  // reload todos
+  // for (let i = 9; i <= text.length; i++) {
+  //   const hour = document.querySelector(`#hour`[i]);
+  //   let hourtext = localStorage.getItem(`hour`[i]);
+  //   hour.textContent = hourtext;
+  // }
+  let hour9 = document.querySelector("#hour9");
+  let hour9text = localStorage.getItem("hour9");
 
-  const savedText = localStorage.getItem("input");
-  text.textContent = savedText;
+  hour9.textContent = hour9text;
+
+  let hour10 = document.querySelector("#hour10");
+  let hour10text = localStorage.getItem("hour10");
+
+  hour10.textContent = hour10text;
+
+  let hour11 = document.querySelector("#hour11");
+  let hour11text = localStorage.getItem("hour11");
+
+  hour11.textContent = hour11text;
+
+  let hour12 = document.querySelector("#hour12");
+  let hour12text = localStorage.getItem("hour12");
+
+  hour12.textContent = hour12text;
+
+  let hour13 = document.querySelector("#hour13");
+  let hour13text = localStorage.getItem("hour13");
+
+  hour13.textContent = hour13text;
+
+  let hour14 = document.querySelector("#hour14");
+  let hour14text = localStorage.getItem("hour14");
+
+  hour14.textContent = hour14text;
+
+  let hour15 = document.querySelector("#hour15");
+  let hour15text = localStorage.getItem("hour15");
+
+  hour15.textContent = hour15text;
+
+  let hour16 = document.querySelector("#hour15");
+  let hour16text = localStorage.getItem("hour15");
+
+  hour16.textContent = hour15text;
+
+  let hour17 = document.querySelector("#hour17");
+  let hour17text = localStorage.getItem("hour17");
+
+  hour17.textContent = hour17text;
+
   timeStyler();
 
   // style text areas
@@ -23,8 +66,7 @@ function start() {
       let timeHTML = timeblock[i].childNodes[3]
         .getAttribute("id")
         .split("hour")[1];
-      console.log(timeHTML);
-      console.log(currentTime);
+
       if (timeHTML == currentTime) {
         timeblock[i].classList.add("present");
         timeblock[i].classList.remove("future");
@@ -45,13 +87,8 @@ function start() {
 // listen for click on each savebtn
 savebtns.forEach((savebtn) => {
   savebtn.addEventListener("click", function handleClick(event) {
-    console.log();
-
     var text = event.path[1].children[1].value;
     var time = event.path[1].children[1].id;
-
-    console.log(text);
-    console.log(time);
 
     localStorage.setItem(time, text);
   });
